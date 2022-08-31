@@ -69,8 +69,8 @@ if __name__ == "__main__":
     inputs = json.load(sys.stdin)
     try:
         output = get_vcpus_ram(inputs['machine_type'])
-    except:
-        output = {"vcpus": None, "ram": None}
+    except Exception as e:
+        output = {"vcpus": None, "ram": None, "error": str(e)}
     for key in output:
         output[key] = str(output[key])
     print(json.dumps(output))
