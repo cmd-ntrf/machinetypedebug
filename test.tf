@@ -7,3 +7,7 @@ data "external" "machine_type" {
 output "vcpus" {
   value = data.external.machine_type.result["vcpus"]
 }
+
+output "error" {
+  value = data.external.machine_type.result["error"]
+}
